@@ -1,0 +1,209 @@
+html{
+    width: 100%;
+    height: 100%;
+    background: -moz-radial-gradient(center, ellipse cover, cyan 0%, #000000 100%); /* ff3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, cyan), color-stop(100%, #000000)); /* safari4+,chrome */
+    background: -webkit-radial-gradient(center, ellipse cover, cyan 0%, #000000 100%); /* safari5.1+,chrome10+ */
+    background: -o-radial-gradient(center, ellipse cover, cyan 0%, #000000 100%); /* opera 11.10+ */
+    background: -ms-radial-gradient(center, ellipse cover, cyan 0%, #000000 100%); /* ie10+ */
+    background: radial-gradient(ellipse at center, cyan 0%, #000000 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='cyan', endColorstr='#000000',GradientType=1 ); /* ie6-9 */
+}
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: transparent;
+}
+#blackBoard {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+.bubble {
+    position: absolute;
+    overflow: hidden;
+    resize: both;
+    border-radius: 50%;    
+    border: 5px solid; 
+    text-align: center;
+    box-sizing: border-box;
+    z-index: 1;    
+}
+.unpopped, .overlapped{
+	border-color: #F1AEDA;
+	background-image: radial-gradient(circle, aliceblue 60%, white 5% );
+}
+.popped{
+	border-color: #D3D3D3;
+	background-image: radial-gradient(circle, #D3D3D3   60%, white 5% );
+}
+.debug{
+	border-color: #ff0000;
+	background-image: radial-gradient(circle, aliceblue 60%, white 5% );
+}
+.overlapped{
+    animation-name: pulseBubble; 
+    animation-duration: 0.475s;
+    animation-iteration-count: 2;
+    animation-direction:  alternate;
+    }
+    @keyframes pulseBubble
+    {
+        0% {
+            background-image: radial-gradient(circle, aliceblue 60%, white 5% );
+        }
+        5% {        
+            background-image: radial-gradient(circle, #F1AEDA 5%, aliceblue 60%,  white 5% );
+        }
+        10% {        
+            background-image: radial-gradient(circle, #F1AEDA 10%, aliceblue 60%,  white 5% );
+        }
+        15% {        
+            background-image: radial-gradient(circle, #F1AEDA 15%, aliceblue 60%,  white 5% );
+        }                
+        20% {        
+            background-image: radial-gradient(circle, #F1AEDA 20%, aliceblue 60%,  white 5% );
+        }
+        25% {        
+            background-image: radial-gradient(circle, #F1AEDA 22.5%, aliceblue 60%,  white 5% );
+        }        
+        30% {        
+            background-image: radial-gradient(circle, #F1AEDA 25%, aliceblue 60%,  white 5% );
+        }
+        35% {        
+            background-image: radial-gradient(circle, #F1AEDA 27.5%, aliceblue 60%,  white 5% );
+        }           
+        40% {        
+            background-image: radial-gradient(circle, #F1AEDA 30%, aliceblue 60%,  white 5% );
+        }
+        45% {        
+            background-image: radial-gradient(circle, #F1AEDA 32.5%, aliceblue 60%,  white 5% );
+        }           
+        50% {        
+            background-image: radial-gradient(circle, #F1AEDA 35%, aliceblue 60%,  white 5% );
+        }
+        55% {        
+            background-image: radial-gradient(circle, #F1AEDA 37.5%, aliceblue 60%,  white 5% );
+        }           
+        60% {        
+            background-image: radial-gradient(circle, #F1AEDA 40%, aliceblue 60%,  white 5% );
+        }
+        65% {        
+            background-image: radial-gradient(circle, #F1AEDA 42.5%, aliceblue 60%,  white 5% );
+        }           
+        70% {        
+            background-image: radial-gradient(circle, #F1AEDA 45%, aliceblue 60%,  white 5% );
+        }
+        75% {        
+            background-image: radial-gradient(circle, #F1AEDA 47.5%, aliceblue 60%,  white 5% );
+        }           
+        80% {        
+            background-image: radial-gradient(circle, #F1AEDA 50%, aliceblue 60%,  white 5% );
+        }
+        85% {        
+            background-image: radial-gradient(circle, #F1AEDA 55%, aliceblue 60%,  white 5% );
+        }           
+        90% {        
+            background-image: radial-gradient(circle, #F1AEDA 62.5%, aliceblue 60%,  white 5% );
+        }
+        95% {        
+            background-image: radial-gradient(circle, #F1AEDA 72.5%, aliceblue 60%,  white 5% );
+        }           
+        100% {        
+            background-image: radial-gradient(circle, #F1AEDA 85%, aliceblue 60%,  white 5% );
+        }
+    }
+.buttonWrapper {
+	border-color: inherit;
+	width: 70%;
+    height:25%;    
+    background: transparent;    
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+	padding-left: 10px;
+}
+.dragThis {	
+    cursor: move;
+    background-color: white;
+    border: 2px solid;
+    border-color: inherit;
+	border-radius: 50%;
+    height: 15px;
+    width:20px;
+    margin-left: auto;
+    margin-top: auto;
+}
+.popThis {            
+    cursor: zoom-out;
+    background-color: white;
+    border: 2px solid;
+	border-color: inherit;
+    border-radius: 50%;
+    height: 20px;
+    width: 4px;	
+    margin-right: auto;
+    margin-top: auto;	
+}
+.popped .popThis{
+    cursor: zoom-in;
+}
+.typingBox {    
+    display: inline-block;
+    vertical-align: middle;    
+    max-width: 100%;
+    max-height: 100%;
+    font: bold 16px/20px Georgia, serif;
+}
+.holdsTypingBox {
+    width: 80%;
+    height: 62%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    /*border: 1px solid black;*/
+}
+.makeNew {     
+	border-color: inherit;
+    cursor: pointer;
+	width:18px;
+	height:18px;
+    position: absolute;
+    right: 20%;
+    bottom: 12%;
+    background: transparent;    
+    justify-content: flex-end;
+    display: flex;
+}
+.makeNew_1 {
+    border: 1px solid;
+	border-color: inherit;
+    border-radius: 50%;
+	height: 3px;
+    width: 3px;
+    position: relative;
+    top: 100%;
+}
+.makeNew_2 {
+    border: 1px solid;
+	border-color: inherit;
+    border-radius: 50%;
+	height: 5px;
+    width: 5px;
+    position: relative;
+    top: 65%;
+}
+.makeNew_3 {
+    border: 1px solid;
+	border-color: inherit;
+    border-radius: 50%;
+	height: 10px;
+    width: 10px;
+    position: relative;
+}
+.bubbleLine {
+	stroke: #F1AEDA;
+    stroke-width:10;
+}

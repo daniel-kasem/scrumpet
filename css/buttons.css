@@ -1,0 +1,25 @@
+
+.button {
+        margin-left: 45%;
+        margin-right: 45%;
+        width: 160px;
+        z-index: 2;
+        position: fixed;
+}
+    
+button {
+    display: inline-block;
+    border: 1px solid #ffffff;
+    border-radius: 5%;
+    padding: 10px 35px 12px 35px;    
+    text-decoration: none;
+    background: #F1AEDA;
+    color: #ffffff;    
+    font: bold 24px/30px Georgia, serif;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
